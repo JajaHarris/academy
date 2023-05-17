@@ -9,7 +9,11 @@ class HomeTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: getValueForScreenType<CrossAxisAlignment>(
+        context: context,
+        mobile: CrossAxisAlignment.center,
+        desktop: CrossAxisAlignment.start,
+      ),
       children: [
         GradientText(
           'MASTER\nFLUTTER',
