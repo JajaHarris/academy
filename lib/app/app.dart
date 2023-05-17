@@ -5,7 +5,6 @@ import 'package:academy/ui/views/startup/startup_view.dart';
 import 'package:academy/ui/views/unknown/unknown_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
-import 'package:academy/ui/views/counter/counter_view.dart';
 import 'package:academy/services/api_service.dart';
 // @stacked-import
 
@@ -13,7 +12,6 @@ import 'package:academy/services/api_service.dart';
   routes: [
     CustomRoute(page: StartupView, initial: true),
     CustomRoute(page: HomeView),
-    CustomRoute(page: CounterView),
 // @stacked-route
 
     CustomRoute(page: UnknownView, path: '/404'),
