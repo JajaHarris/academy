@@ -1,5 +1,10 @@
 import 'package:academy/ui/common/app_colors.dart';
 import 'package:academy/ui/common/app_constants.dart';
+import 'package:academy/ui/common/ui_helpers.dart';
+import 'package:academy/ui/views/home/widgets/home_image.dart';
+import 'package:academy/ui/views/home/widgets/home_title.dart';
+import 'package:academy/ui/widgets/common/academy_icon.dart';
+import 'package:academy/ui/widgets/common/google_sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:stacked/stacked.dart';
@@ -13,18 +18,20 @@ class HomeViewMobile extends ViewModelWidget<HomeViewModel> {
   Widget build(BuildContext context, HomeViewModel viewModel) {
     return Scaffold(
       backgroundColor: kcBackgroundColor,
-      body: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: Image.asset(
-          'master-web-hero-image.png',
-          width: kdDesktopMaxContentWidth * 0.4,
-          height: getValueForScreenType(
-            context: context,
-            mobile: 650,
-            desktop: double.infinity,
-          ),
-          fit: BoxFit.cover,
+      body: ListView(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 40,
+          vertical: 50,
         ),
+        children: const [
+          AcademyIcon(),
+          verticalSpaceLarge,
+          HomeTitle(),
+          verticalSpaceTiny,
+          GoogleSignIn(),
+          verticalSpaceMedium,
+          HomeImage(),
+        ],
       ),
     );
   }
